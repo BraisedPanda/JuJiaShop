@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Login V19</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+				<form class="login100-form validate-form" method="post" action="/regist">
+					<span class="login100-form-title p-b-33" th:if="${code == 200}">
+						注册成功
+					</span>
+					<span class="login100-form-title p-b-33" th:if="${code == 500}">
+						注册失败
+					</span>
+
+
+
+					<input type="hidden"  th:value="${code}" id="message">
+					<div class="container-login100-form-btn m-t-20" th:if="${code == 200}">
+						<a class="login100-form-btn" style="background-color: #2bae85" href="login">
+							页面将在3s后自动跳转，若无反应，点击此处
+						</a>
+					</div>
+					<div class="container-login100-form-btn m-t-20" th:if="${code == 500}">
+						<a class="login100-form-btn" href="regist" style="background-color: #f07c82">
+							页面将在3s后自动跳转，若无反应，点击此处
+						</a>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/login.js"></script>
+
+	<script>
+		$(function () {
+			var code = $("#message").val();
+			if(code == 200){
+                setTimeout("location.href='login';", 3500);
+            }
+			if(code == 500){
+                setTimeout("location.href='regist';", 3500);
+			}
+        });
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.path_nav{
+    margin-top:12px;
+
+}
+.path_nav a{
+    font-family: 华文细黑;
+    font-size: 16px;
+    transition: 0.2s;
+}
+.path_nav a:hover{
+    color: rgb(251, 183, 16);
+}
+.iframe{
+    margin-top: 10px;
+}
+.pagination{
+    margin-top: -20px;
+    position: relative;
+    margin-left:50%;
+}
+.details{
+    width: 400px;
+    height: 400px;
+    float: left;
+    overflow: hidden;
+}
+.footer_area{
+    margin-top:10px;
+}
